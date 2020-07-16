@@ -1,7 +1,5 @@
-
 const HDWalletProvider = require("truffle-hdwallet-provider");
 require('dotenv').config()
-
 
 module.exports = {
   networks: {
@@ -27,7 +25,7 @@ module.exports = {
   },
 
   mocha: {
-    timeout: 1000000
+    timeout: 4000000
   },
 
   compilers: {
