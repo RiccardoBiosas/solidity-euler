@@ -1,7 +1,10 @@
 pragma solidity ^0.4.22;
+
 // A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
 // Find the largest palindrome made from the product of two 3-digit numbers.
+
 contract Problem4 {
+
     function uintToString(uint v) internal pure returns (string memory str) {
         uint maxlength = 100;
         bytes memory reversed = new bytes(maxlength);
@@ -17,6 +20,7 @@ contract Problem4 {
         }
         str = string(s);
     }
+
     function stringToUint(string memory s) internal pure returns (uint) {
         bytes memory b = bytes(s);
         uint result = 0;
@@ -27,6 +31,7 @@ contract Problem4 {
         }
         return result;
     }
+
     function reverseNum(uint256 _base) internal pure returns(uint256) {
         string memory numToStr = uintToString(_base);
         bytes memory _baseBytes = bytes(numToStr);
@@ -39,6 +44,7 @@ contract Problem4 {
         string memory strResult = string(_newValue);
         return stringToUint(strResult);
     }
+
     function checkPalindromeNum(uint256 _a) internal pure returns(bool) {
         if(_a == reverseNum(_a)) {
             return true;
@@ -46,9 +52,9 @@ contract Problem4 {
             return false;
         }
     }
+
     function productOfThreeDigits() public pure returns(uint256) {
         uint256 firstN = 999;
-        // uint256 secondN = 999;
         bool successor = false;
         uint256 currentPalindrome = 0;
         for(uint256 i = firstN; i>=100; i--) {
@@ -64,8 +70,8 @@ contract Problem4 {
                             successor = true;
                             currentPalindrome = product;
                     } else {
-                        currentPalindrome = product;  
-                        break;                                                 
+                        currentPalindrome = product;
+                        break;
                         }
                     }
                 }

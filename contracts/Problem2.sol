@@ -7,8 +7,7 @@ pragma solidity ^0.4.22;
 // By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
 contract Problem2 {
-    uint256 maxValue = 4000000;
-    
+    uint256 maxValue = 4000000;    
 
      function sumOfEvenFibonacci() public view returns(uint256) {
          uint256 sum;
